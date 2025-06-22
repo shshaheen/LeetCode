@@ -14,6 +14,10 @@ while i < len(arr1) and j < len(arr2):
         else:
             union.append(arr1[i])
             i += 1
+            j += 1
+    elif union[-1]==arr1[i]:
+        i += 1
+    elif union[-1]==arr2[i]:
         j += 1
     
 while i < len(arr1):
@@ -24,4 +28,4 @@ while j < len(arr2):
     if union[-1] != arr2[j]:
         union.append(arr2[j])
     j += 1
-print("Union of the two sorted arrays is:", union)
+print("Union of the two sorted arrays is:", union[1:])
