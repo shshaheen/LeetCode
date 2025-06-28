@@ -23,9 +23,15 @@ class Solution:
         """
         Do not return anything, modify nums in-place instead.
         """
-        n = len(nums)
-        left = 0
-        for right in range(n):
-            if nums[right] != 0:
-                nums[left], nums[right] = nums[right], nums[left]
-                left += 1
+        n=len(nums)
+        idx = -1
+        for i in range(n):
+            if(nums[i] == 0):
+                idx=i
+                break
+        if(idx == -1):
+            return
+        for i in range(idx+1,n):
+            if(nums[i]!=0):
+                nums[i],nums[idx] = nums[idx],nums[i]
+                idx+=1
